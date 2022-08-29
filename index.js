@@ -2,6 +2,8 @@ const express = require('express')
 const morgan = require('morgan')
 const birthdaysRouter = require('./routes/birthdays')
 const authRouter = require('./routes/auth')
+const databaseConnection = require('./config/database')
+require('dotenv').config()
 
 const app = express()
 
@@ -13,4 +15,14 @@ app.get('/', (req, res) => { res.send('Hello World');  })
 app.use('/auth',authRouter)
 app.use('/api/birthdays',birthdaysRouter)
 
-app.listen(3000, () => {console.log('Listening on port 3000')})
+
+// start server
+const startApplication = async() => {
+    await databaseConnection(process.env.MONGOURL)
+    console.log('connected to database')
+    const PORT = process.env.PORT
+    app.listen(PORT, () => {
+        console.log(`Listening on port ${PORT}`)
+    })
+}
+startApplication()
