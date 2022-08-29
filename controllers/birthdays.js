@@ -6,4 +6,8 @@ const getMonthwiseBirthdays = async(req,res,next) => {
     res.send("monthwise birthdays")
 }
 
-module.exports = { getAllBirthdays, getMonthwiseBirthdays }
+const insertBirthday = async(req,res,next) => {
+    res.send("insert a new birthday")
+}
+
+module.exports = { getAllBirthdays, getMonthwiseBirthdays, insertBirthday }
