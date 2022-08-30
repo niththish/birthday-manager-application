@@ -29,11 +29,11 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5em 0;
+    padding: 3em 0 5em 0;
 }
 
 section div{
-    margin: 1em 0;
+    margin: 1em 0 2em 0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -49,4 +49,45 @@ section ul{
 
 section ul li{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
+
+ul li i{
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+#addNew, #update{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    padding-top: 2em;
+    justify-content: flex-end;
+}
+
+#addNew > *, #update > *{
+    padding: 0.3em;
+    margin: 0 1em;
+}
+
+#addNew button, #update button{
+    padding: 0 2em;
+    background: #8c28f7;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.inactive{
+    display: none !important;
+}
+
+.fnt_awes{
+    color: #8c28f7;
+    font-size: 1.2em;
+}
+
+
+

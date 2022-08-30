@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthdays</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/birthdays.css">
 </head>
 <body>
@@ -13,33 +14,30 @@
         <button onclick="logout()">logout</button>
     </nav>
 
+    <div id="addNew">
+        <input type="text" placeholder="enter name">
+        <input type="date">
+        <button onclick="insertBirthday()">Add New</button>
+    </div>
+
+    <div id="update" class="inactive">
+        <input type="text" placeholder="enter name">
+        <input type="date">
+        <button>update</button>
+    </div>
+
     <section>
         <div id="today">
             <h1>Today Birthday list</h1>
-            <ul>
-                <li>content1</li>
-                <li>content1</li>
-                <li>content1</li>
-                <li>content1</li>
-            </ul>
+            <ul></ul>
         </div>
         <div id="this_week">
             <h1>This week Birthday list</h1>
-            <ul>
-                <li>content1</li>
-                <li>content1</li>
-                <li>content1</li>
-                <li>content1</li>
-            </ul>
+            <ul></ul>
         </div>
         <div id="this_month">
             <h1>This month Birthday list</h1>
-            <ul>
-                <li>content1</li>
-                <li>content1</li>
-                <li>content1</li>
-                <li>content1</li>
-            </ul>
+            <ul></ul>
         </div>
         
     </section>
