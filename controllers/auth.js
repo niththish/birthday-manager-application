@@ -1,6 +1,7 @@
 const userSchema = require('../models/users')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { throwAuthError } = require('../errors/authError');
 
 const login = async(req,res,next) => {
     const { username, password } = req.body;
@@ -12,9 +13,9 @@ const login = async(req,res,next) => {
             const token = jwt.sign({userId : user._id},process.env.JWT_SECRET,{expiresIn : process.env.JWT_LIFETIME})
             return res.json({status : 'success',token : token})
         }
-        return next("password incorrect")
+        return next(throwAuthError("password incorrect"))
     }
-    return next('username is not found')
+    return next(throwAuthError('username is not found'))
 }
 
 const signup = async(req,res,next) => {
@@ -25,7 +26,7 @@ const signup = async(req,res,next) => {
         const user = await userSchema.create(req.body)
         return res.send("registered successfully")
     }
-    return next("username already taken")
+    return next(throwAuthError("username already taken"))
 }
 
 module.exports = { login, signup }

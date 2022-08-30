@@ -4,6 +4,7 @@ const birthdaysRouter = require('./routes/birthdays')
 const authRouter = require('./routes/auth')
 const databaseConnection = require('./config/database')
 const authenticate = require('./middleware/authenticate')
+const errorHandler = require('./middleware/errorHandler')
 require('dotenv').config()
 
 const app = express()
@@ -21,6 +22,7 @@ app.get('/birthdays',(req,res,next) => {
 app.use('/auth',authRouter)
 app.use('/api/birthdays',authenticate,birthdaysRouter)
 
+app.use(errorHandler)
 
 // start server
 const startApplication = async() => {
