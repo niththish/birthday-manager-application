@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+nav{
+    background-color: #8c28f7;
+    color: #fff;
+    padding: 1em;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+ul li{
+    padding: 0 1.5em;
+}
+
+ul li button{
+    background: none;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+}
+
+section{
+    width: 50%;
+    margin: auto;
+    padding: 5em 0em;
+}
+section #login, section #signup{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+section #login label, section #signup label{
+    width: 100%;
+    background-color: #8c28f7;
+    color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+section #login input, section #signup input{
+    width: 80%;
+    padding: 0.5em;
+    margin: 1em;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+section #login button, section #signup button{
+    margin: 2em;
+    width: 50%;
+    padding: 0.5em;
+    border: none;
+    background-color: #8c28f7;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 2px;
+}
+
+section #login p, section #signup p{
+    margin-bottom: 1em;
+    display: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.inactive{
+    display: none !important;
+}

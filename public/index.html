@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Manager</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <nav>
+        <h1>Birthday Manager</h1>
+        <ul>
+            <li><button onclick="toggleForm(this)">login</button></li>
+            <li><button onclick="toggleForm(this)">signup</button></li>
+        </ul>
+    </nav>
+    <section>
+        <div id="login">
+            <label>User Login</label>
+            <input type="text" name="username" placeholder="enter username" autocomplete="off">
+            <input type="password" placeholder="enter password" autocomplete="off">
+            <button onclick="login()">Login</button>
+            <p id="status">status</p>
+        </div>
+        <div id="signup" class="inactive">
+            <label>User signup</label>
+            <input type="text" name="username" placeholder="enter username" autocomplete="off">
+            <input type="password" placeholder="enter password" autocomplete="off">
+            <button onclick="signup()">signup</button>
+            <p id="status">status</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/index.js"></script>
+    
+</body>
+</html>

@@ -8,11 +8,16 @@ require('dotenv').config()
 
 const app = express()
 
+app.use(express.static('./public'))
 app.use(morgan('short'))
 app.use(express.json())
 
 // routes
-app.get('/', (req, res) => { res.send('Hello World');  })
+app.get('/birthdays',(req,res,next) => {
+    console.log(__dirname);
+    res.sendFile('public/birthdays.html',{root : __dirname})
+})
+
 app.use('/auth',authRouter)
 app.use('/api/birthdays',authenticate,birthdaysRouter)
 
