@@ -1,13 +1,15 @@
-const getAllBirthdays = async(req,res,next) => {
-    res.send("all birthdays")
-}
+const birthdaySchema = require('../models/birthdays')
 
-const getMonthwiseBirthdays = async(req,res,next) => {
-    res.send("monthwise birthdays")
+const getAllBirthdays = async(req,res,next) => {
+    const birthdays = await birthdaySchema.find({ createdBy : req.userId}, { createdBy : 0})
+    res.json({status : "success", data : birthdays})
 }
 
 const insertBirthday = async(req,res,next) => {
-    res.send("insert a new birthday")
+    req.body.createdBy = req.userId;
+    console.log(req.body);
+    const birthday = await birthdaySchema.create(req.body)
+    res.json({ status : "success", msg : "inserted a new birthday detail"})
 }
 
-module.exports = { getAllBirthdays, getMonthwiseBirthdays, insertBirthday }
+module.exports = { getAllBirthdays, insertBirthday }
