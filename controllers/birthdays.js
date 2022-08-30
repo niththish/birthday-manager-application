@@ -24,4 +24,11 @@ const updateBirthday = async(req,res,next) => {
     res.send("invalid birthday user information")
 }
 
-module.exports = { getAllBirthdays, insertBirthday, updateBirthday }
+const deleteBirthday = async(req,res,next) => {
+    const birthdayId = req.params.id;
+    const deleteStatus = await birthdaySchema.findOneAndDelete({_id : birthdayId, createdBy : req.userId},{new : true, runValidators : true})
+    if(deleteStatus) return res.json({status : "success", msg : "deleted birthday detail"})
+    res.send("invalid birthday user information")
+}
+
+module.exports = { getAllBirthdays, insertBirthday, updateBirthday, deleteBirthday }
