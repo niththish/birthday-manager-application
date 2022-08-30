@@ -12,4 +12,16 @@ const insertBirthday = async(req,res,next) => {
     res.json({ status : "success", msg : "inserted a new birthday detail"})
 }
 
-module.exports = { getAllBirthdays, insertBirthday }
+const updateBirthday = async(req,res,next) => {
+    const birthdayId = req.params.id;
+    const updateQuery = {
+        name : req.body.name,
+        birthdate : req.body.birthdate
+    }
+    console.log(updateQuery);
+    const birthday = await birthdaySchema.findOneAndUpdate({_id : birthdayId, createdBy : req.userId},updateQuery,{new : true, runValidators : true})
+    if(birthday) return res.json({status : "success", msg : "updated birthday detail"})
+    res.send("invalid birthday user information")
+}
+
+module.exports = { getAllBirthdays, insertBirthday, updateBirthday }
