@@ -19,7 +19,6 @@ const login = async(req,res,next) => {
 
 const signup = async(req,res,next) => {
     const { username, password } = req.body;
-    console.log(username,password);
     if(!username || !password) return next("provide username and password")
     const user = await userSchema.findOne({username})
     if(!user) {
