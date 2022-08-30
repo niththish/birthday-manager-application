@@ -69,10 +69,14 @@ const postLogin = async(username,password) => {
 }
 
 
-const postSignup = async() => {
+const postSignup = async(username,password) => {
     try{
         const res = await axios.post('/auth/signup',{ username : username, password : password })
-        if(res.data.status === 'success') console.log("success");
+        if(res.data.status === 'success') {
+            const status = document.querySelector("#signup p");
+            status.innerText = "user registered sucessfully";
+            status.style.display = "block";
+        }
         else console.log("invalid");
     }catch(err){
         console.log(err);
