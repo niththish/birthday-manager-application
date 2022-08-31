@@ -8,6 +8,15 @@ const toggleForm = (e) => {
     document.getElementById('signup').classList.remove('inactive');
 }
 
+function togglePassword(flag){
+    const pass = document.querySelectorAll(`#${flag} input`)[1];
+    if(pass.type === 'password'){
+        pass.type = 'text';
+    }else{
+        pass.type = 'password';
+    }
+}
+
 const login = async() => {
     const formData = document.querySelectorAll("#login input");
     const username = formData[0].value;
@@ -55,6 +64,7 @@ function validateForm(username,password,formId){
 }
 
 
+
 const postLogin = async(username,password) => {
     try{
         const res = await axios.post('/auth/login',{ username : username, password : password })
@@ -64,7 +74,9 @@ const postLogin = async(username,password) => {
         }
         else console.log("invalid");
     }catch(err){
-        console.log(err);
+        const status = document.querySelector("#login p");
+        status.innerText = err.response.data;
+        status.style.display = "block";
     }
 }
 
@@ -79,7 +91,9 @@ const postSignup = async(username,password) => {
         }
         else console.log("invalid");
     }catch(err){
-        console.log(err);
+        const status = document.querySelector("#signup p");
+        status.innerText = err.response.data;
+        status.style.display = "block";
     }
 }
 

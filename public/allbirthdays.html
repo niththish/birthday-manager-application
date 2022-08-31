@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Birthdays</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/allbirthdays.css">
+</head>
+<body>
+    
+    <nav>
+        <h1 onclick="getbirthdaysPage()">Birthday Manager</h1>
+        <div>
+            <button onclick="logout()">logout</button>
+        </div>
+    </nav>
+
+    <div id="update" class="inactive">
+        <input type="text" placeholder="enter name">
+        <input type="date">
+        <button>update</button>
+    </div>
+
+    <section>
+        <div class="searchbar">
+            <input type="search" placeholder="search" maxlength="1">
+        </div>
+        
+        <div id="all_event">
+            <ul></ul>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/allbirthdays.js"></script>
+</body>
+</html>

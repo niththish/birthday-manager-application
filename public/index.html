@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -20,6 +21,7 @@
             <label>User Login</label>
             <input type="text" name="username" placeholder="enter username" autocomplete="off">
             <input type="password" placeholder="enter password" autocomplete="off">
+            <span onclick="togglePassword('login')">show password</span>
             <button onclick="login()">Login</button>
             <p id="status">status</p>
         </div>
@@ -27,6 +29,7 @@
             <label>User signup</label>
             <input type="text" name="username" placeholder="enter username" autocomplete="off">
             <input type="password" placeholder="enter password" autocomplete="off">
+            <span onclick="togglePassword('signup')">show password</span>
             <button onclick="signup()">signup</button>
             <p id="status">status</p>
         </div>

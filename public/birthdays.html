@@ -11,9 +11,11 @@
 <body>
     <nav>
         <h1>Birthday Manager</h1>
-        <button onclick="logout()">logout</button>
+        <div>
+            <i class="fa fa-plus addbtn" aria-hidden="true"></i>
+            <button onclick="logout()">logout</button>
+        </div>
     </nav>
-
     <div id="addNew">
         <input type="text" placeholder="enter name">
         <input type="date">
@@ -27,17 +29,21 @@
     </div>
 
     <section>
+        <span class="view_all" onclick="getAllbirthdaysPage()">View All</span>
         <div id="today">
             <h1>Today Birthday list</h1>
             <ul></ul>
+            <span class="no_event"></span>
         </div>
         <div id="this_week">
             <h1>This week Birthday list</h1>
             <ul></ul>
+            <span class="no_event"></span>
         </div>
         <div id="this_month">
             <h1>This month Birthday list</h1>
             <ul></ul>
+            <span class="no_event"></span>
         </div>
         
     </section>
