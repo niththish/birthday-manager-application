@@ -19,6 +19,10 @@ app.get('/birthdays',(req,res,next) => {
     res.sendFile('public/birthdays.html',{root : __dirname})
 })
 
+app.get('/allbirthdays',(req,res,next) => {
+    res.sendFile('/public/allbirthdays.html',{root : __dirname})
+})
+
 app.use('/auth',authRouter)
 app.use('/api/birthdays',authenticate,birthdaysRouter)
 
