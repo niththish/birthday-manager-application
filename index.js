@@ -5,10 +5,12 @@ const authRouter = require('./routes/auth')
 const databaseConnection = require('./config/database')
 const authenticate = require('./middleware/authenticate')
 const errorHandler = require('./middleware/errorHandler')
+const cors = require('cors')
 require('dotenv').config()
 
 const app = express()
 
+app.use(cors())
 app.use(express.static('./public'))
 app.use(morgan('short'))
 app.use(express.json())
