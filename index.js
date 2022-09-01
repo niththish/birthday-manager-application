@@ -35,7 +35,7 @@ const startApplication = async() => {
     await databaseConnection(process.env.MONGOURL)
     console.log('connected to database')
     const PORT = process.env.PORT
-    app.listen(PORT, () => {
+    app.listen(PORT,() => {
         console.log(`Listening on port ${PORT}`)
     })
 }
