@@ -8,7 +8,6 @@ To run this application in your local server, you need to have a .env file conta
   <li>JWT_SECRET</li>
   <li>JWT_LIFETIME</li>
 </ol>
-<hr>
 
 # REST endpoints
 <ol>
